@@ -1,4 +1,4 @@
-service: 'sveltekit-app'
+service: 'sveltekit-test-app'
 
 frameworkVersion: "3"
 
