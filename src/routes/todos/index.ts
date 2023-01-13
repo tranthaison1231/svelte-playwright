@@ -1,13 +1,10 @@
 import { api } from './_api';
 import type { RequestHandler } from './__types';
 
-export const get: RequestHandler = async ({ locals }) => {
-	// locals.userid comes from src/hooks.js
+export const GET: RequestHandler = async ({ locals }) => {
 	const response = await api('GET', `todos/${locals.userid}`);
 
 	if (response.status === 404) {
-		// user hasn't created a todo list.
-		// start with an empty array
 		return {
 			body: {
 				todos: []
@@ -22,13 +19,12 @@ export const get: RequestHandler = async ({ locals }) => {
 			}
 		};
 	}
-
 	return {
 		status: response.status
 	};
 };
 
-export const post: RequestHandler = async ({ request, locals }) => {
+export const POST: RequestHandler = async ({ request, locals }) => {
 	const form = await request.formData();
 
 	await api('POST', `todos/${locals.userid}`, {
@@ -47,7 +43,7 @@ const redirect = {
 	}
 };
 
-export const patch: RequestHandler = async ({ request, locals }) => {
+export const PATCH: RequestHandler = async ({ request, locals }) => {
 	const form = await request.formData();
 
 	await api('PATCH', `todos/${locals.userid}/${form.get('uid')}`, {
@@ -58,7 +54,7 @@ export const patch: RequestHandler = async ({ request, locals }) => {
 	return redirect;
 };
 
-export const del: RequestHandler = async ({ request, locals }) => {
+export const DELETE: RequestHandler = async ({ request, locals }) => {
 	const form = await request.formData();
 
 	await api('DELETE', `todos/${locals.userid}/${form.get('uid')}`);

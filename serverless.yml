@@ -1,6 +1,6 @@
 service: 'sveltekit-test-app'
 
-frameworkVersion: "3"
+frameworkVersion: '3'
 
 plugins:
   - '@silvermine/serverless-plugin-cloudfront-lambda-edge'
@@ -25,22 +25,21 @@ custom:
   assets:
     auto: true
     targets:
-      - bucket: 
+      - bucket:
           Ref: StaticAssets
         files:
           - source: ./build/assets/
-            globs: 
+            globs:
               - '**'
             empty: true
             headers:
               CacheControl: max-age=31104000
           - source: ./build/prerendered/
-            globs: 
+            globs:
               - '**'
             empty: true
             headers:
               CacheControl: max-age=60
-
 
 functions:
   #SSR Function
@@ -76,24 +75,23 @@ resources:
           Statement:
             - Sid: PublicReadGetObject
               Effect: Allow
-              Principal: "*"
+              Principal: '*'
               Action:
                 - s3:GetObject
               Resource:
-                Fn::Join: ["", ["arn:aws:s3:::", { "Ref": "StaticAssets" }, "/*"]]
+                Fn::Join: ['', ['arn:aws:s3:::', { 'Ref': 'StaticAssets' }, '/*']]
 
     WebsiteDistribution:
       Type: 'AWS::CloudFront::Distribution'
       Properties:
         DistributionConfig:
           Origins:
-            -
-              DomainName: !Select [2, !Split ["/", !GetAtt ["SvelteLambdaFunctionUrl", "FunctionUrl"]]]
+            - DomainName:
+                !Select [2, !Split ['/', !GetAtt ['SvelteLambdaFunctionUrl', 'FunctionUrl']]]
               Id: default
-              OriginCustomHeaders: 
+              OriginCustomHeaders:
                 #Lambda@edge does not support ENV vars, so instead we have to pass in a customHeaders.
-                -
-                  HeaderName: 's3-host'
+                - HeaderName: 's3-host'
                   HeaderValue: '${self:provider.stage}-${self:service}-static-assets.s3.amazonaws.com'
               CustomOriginConfig:
                 HTTPPort: 80
