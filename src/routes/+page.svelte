@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
 	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
 	export const prerender = true;
 </script>
 
@@ -13,49 +12,15 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
+<section class="flex flex-col justify-center items-center flex-1">
 	<Header />
 	<h1>
-		<span class="welcome">
+		<span class="block relative w-full">
 			<picture>
 				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
+				<img class="absolute w-full h-full block top-0" src="svelte-welcome.png" alt="Welcome" />
 			</picture>
 		</span>
-
-		to your new<br />SvelteKit app
 	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
 	<Counter />
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
