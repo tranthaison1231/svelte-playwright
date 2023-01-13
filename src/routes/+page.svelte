@@ -1,4 +1,6 @@
 <script context="module" lang="ts">
+	import Header from '$lib/header/Header.svelte';
+	import '../app.css';
 	export const prerender = true;
 </script>
 
@@ -12,6 +14,7 @@
 </svelte:head>
 
 <section>
+	<Header />
 	<h1>
 		<span class="welcome">
 			<picture>
@@ -26,7 +29,6 @@
 	<h2>
 		try editing <strong>src/routes/index.svelte</strong>
 	</h2>
-
 	<Counter />
 </section>
 
@@ -47,8 +49,6 @@
 		display: block;
 		position: relative;
 		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
 	}
 
 	.welcome img {
