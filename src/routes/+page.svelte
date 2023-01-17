@@ -1,26 +1,11 @@
-<script context="module" lang="ts">
-	import Header from '$lib/header/Header.svelte';
-	export const prerender = true;
-</script>
-
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+	import NewFeeds from '$lib/NewFeeds.svelte';
+	import Sidebar from '$lib/Sidebar.svelte';
+	import TrendForYou from '$lib/TrendForYou.svelte';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section class="flex flex-col justify-center items-center flex-1">
-	<Header />
-	<h1>
-		<span class="block relative w-full">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img class="absolute w-full h-full block top-0" src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
-	</h1>
-	<Counter />
-</section>
+<div class="grid grid-cols-3 gap-3 w-full h-screen">
+	<Sidebar />
+	<NewFeeds />
+	<TrendForYou />
+</div>
