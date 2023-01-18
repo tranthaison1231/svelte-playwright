@@ -5,12 +5,12 @@
 
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Sidebar from '$lib/Sidebar.svelte';
+	import TrendForYou from '$lib/TrendForYou.svelte';
 </script>
 
-{#if $page.data.session}
+<div class="grid grid-cols-3 gap-3 w-full h-screen">
+	<Sidebar />
 	<slot />
-{:else}
-	<div class="flex items-center h-screen w-full justify-center">
-		<button> <a href="/auth/signin" data-sveltekit-preload-data="off">Sign in</a> </button>
-	</div>
-{/if}
+	<TrendForYou />
+</div>
