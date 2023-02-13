@@ -1,16 +1,15 @@
 <script context="module" lang="ts">
-	import '../app.css';
 	import 'uno.css';
+	import '../app.css';
 </script>
 
 <script lang="ts">
-	import { page } from '$app/stores';
-	import Sidebar from '$lib/Sidebar.svelte';
-	import TrendForYou from '$lib/TrendForYou.svelte';
+	import RightSideBar from '$lib/RightSideBar.svelte';
+	import LeftSidebar from '$lib/LeftSidebar.svelte';
 </script>
 
 <div class="grid grid-cols-3 gap-3 w-full h-screen">
-	<Sidebar />
+	<LeftSidebar />
 	<slot />
-	<TrendForYou />
+	<RightSideBar />
 </div>
