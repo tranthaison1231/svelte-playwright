@@ -4,7 +4,7 @@
 	import WhoToFlow from '$lib/WhoToFlow.svelte';
 </script>
 
-<div class="border-0.2 border-solid px-12 py-1">
+<div border-0.2 border-solid px-12 py-1>
 	<SearchTwitter />
 	<TrendForYou />
 	<WhoToFlow />

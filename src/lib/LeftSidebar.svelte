@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="border-0.2 border-solid">
+<div border-0.2 border-solid>
 	<ul>
 		<li><a href="/">Twitter</a></li>
 		<li><a href="/home">Home</a></li>
@@ -24,7 +24,7 @@
 	</ul>
 </div>
 {#if !$page.data.session}
-	<div class="absolute bg-sky-500 bottom-0 w-full flex justify-around	p-2">
+	<div absolute bg-sky-500 bottom-0 w-full flex justify-around p-2>
 		<p>Don't miss what's happening</p>
 		<button> <a href="/auth/signin" data-sveltekit-preload-data="off">Sign in</a> </button>
 	</div>

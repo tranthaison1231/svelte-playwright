@@ -8,7 +8,7 @@
 	import LeftSidebar from '$lib/LeftSidebar.svelte';
 </script>
 
-<div class="grid grid-cols-3 gap-3 w-full h-screen">
+<div grid grid-cols-3 gap-3 w-full h-screen>
 	<LeftSidebar />
 	<slot />
 	<RightSideBar />

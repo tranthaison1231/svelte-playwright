@@ -1,9 +1,15 @@
-import { sveltekit } from '@sveltejs/kit/vite';
 import unocss from 'unocss/vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { extractorSvelte } from 'unocss';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit(), unocss()],
+	plugins: [
+		sveltekit(),
+		unocss({
+			extractors: [extractorSvelte]
+		})
+	],
 	test: {
 		globals: true,
 		environment: 'jsdom',
