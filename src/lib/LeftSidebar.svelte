@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div border-0.2 border-solid>
+<div border="0.2 solid">
 	<ul>
 		<li><a href="/">Twitter</a></li>
 		<li><a href="/home">Home</a></li>

@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@auth/core': ^0.4.0
   '@auth/sveltekit': ^0.2.1
-  '@fontsource/fira-mono': ^4.5.10
   '@playwright/experimental-ct-svelte': ^1.30.0
   '@playwright/test': ^1.30.0
   '@sveltejs/adapter-auto': 2.0.0
@@ -33,7 +32,6 @@ specifiers:
 dependencies:
   '@auth/core': 0.4.0
   '@auth/sveltekit': 0.2.1_4rylcc2rz3gc4fnbb666aauziu
-  '@fontsource/fira-mono': 4.5.10
   cookie: 0.5.0
 
 devDependencies:
@@ -356,10 +354,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@fontsource/fira-mono/4.5.10:
-    resolution: {integrity: sha512-bxUnRP8xptGRo8YXeY073DSpfK74XpSb0ZyRNpHV9WvLnJ7TwPOjZll8hTMin7zLC6iOp59pDZ8EQDj1gzgAQQ==}
-    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
