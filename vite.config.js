@@ -21,7 +21,15 @@ const config = {
 				presetAttributify()
 			],
 			transformers: [transformerDirectives(), transformerVariantGroup()],
-			extractors: [extractorSvelte]
+			extractors: [extractorSvelte],
+			theme: {
+				colors: {
+					primary: 'blue'
+				},
+				maxWidth: {
+        	container: '1240px',
+      	},
+			}
 		}),
 		sveltekit()
 	],
