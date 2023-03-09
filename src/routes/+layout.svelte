@@ -4,12 +4,9 @@
 </script>
 
 <script lang="ts">
-	import RightSideBar from '$lib/RightSideBar.svelte';
-	import LeftSidebar from '$lib/LeftSidebar.svelte';
+	import AppLayout from '$lib/components/layout/AppLayout.svelte';
 </script>
 
-<div grid="~ cols-3" gap-3 w-full h-screen>
-	<LeftSidebar />
+<AppLayout>
 	<slot />
-	<RightSideBar />
-</div>
+</AppLayout>
